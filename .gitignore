@@ -1,0 +1,42 @@
+.venv/
+.venv312/
+node_modules/
+__pycache__/
+.pytest_cache/
+.cache-wheels/
+.env
+.env.*
+!.env.example
+runtime/
+artifacts/screenshots/
+artifacts/docx-render*/
+artifacts/docx-assets/
+.codex-finalizer/
+.ppt-build/
+*.pyc
+external/
+data/sources/*.html
+data/sources/*.txt
+data/sources/manifest.json
+nexent/*prerequisites*.log
+nexent/*.log
+# Local datasets/documents pending redistribution review; keep originals on disk.
+data/public_candidate_seed_2026.json
+data/public_case_records_2026.jsonl
+artifacts/public-notice-results.json
+artifacts/*.docx
+artifacts/*.xlsx
+# Generated publication packages and review output must not enter Git recursively.
+artifacts/releases/
+# Local competition and outreach materials; retained outside the personal repository.
+docs/competition-matrix.md
+docs/scorecard-2026-09-26.md
+docs/defense-outline.md
+docs/design-supplement.md
+docs/使用与后续准备.md
+docs/authorized-data-collection.md
+docs/voluntary-enterprise-recruitment.md
+scripts/build_design_doc.py
+scripts/build_authorized_case_collection_doc.py
+scripts/prepare_authorized_case_collection.py
+scripts/artifact-tools/
