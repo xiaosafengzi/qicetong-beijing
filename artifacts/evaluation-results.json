@@ -1,0 +1,770 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-26T14:10:24.190965+00:00",
+  "dataset": {
+    "name": "企策通困难案例评测集",
+    "path": "data/evaluation_cases.json",
+    "data_type": "基于公开政策规则和模拟企业材料构造",
+    "leakage_note": "评测案例不写入运行数据库；每次从静态基准数据复制并施加单一或成组扰动。"
+  },
+  "engine": {
+    "name": "企策通确定性证据规则引擎",
+    "engine_version": "0.2.0",
+    "summary": {
+      "case_count": 15,
+      "status_correct": 15,
+      "status_accuracy": 1.0,
+      "exact_case_count": 15,
+      "exact_case_accuracy": 1.0,
+      "missing_field_cases": 7,
+      "missing_field_exact": 7,
+      "missing_field_accuracy": 1.0,
+      "categories": {
+        "完整材料": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "缺失材料": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "证据冲突": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "人机协同": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "边界值": {
+          "cases": 2,
+          "exact": 2,
+          "accuracy": 1.0
+        },
+        "跨文档计算": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "期间错配": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "逻辑冲突": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "异常数值": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "类型安全": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "单位校验": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "比例计算": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "时间推理": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "规则组合": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "total_latency_ms": 11.015,
+    "cases": [
+      {
+        "id": "hnte-complete-package",
+        "category": "完整材料",
+        "description": "完整且已核对的企业材料应得到稳定通过结论。",
+        "rule_id": "staff_ratio",
+        "expected_status": "pass",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "24 ÷ 80 = 30.00%；要求 ≥ 10%",
+        "latency_ms": 1.073,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-missing-rd-year",
+        "category": "缺失材料",
+        "description": "缺少一个会计年度研发费用时不得按零值或通过处理。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "rd_2024"
+        ],
+        "predicted_missing_fields": [
+          "rd_2024"
+        ],
+        "reasoning": "缺少2024年研发费用",
+        "latency_ms": 0.598,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-conflicting-headcount",
+        "category": "证据冲突",
+        "description": "职工总数材料冲突时不得继续给出人员比例结论。",
+        "rule_id": "staff_ratio",
+        "expected_status": "conflict",
+        "predicted_status": "conflict",
+        "expected_missing_fields": [
+          "employees"
+        ],
+        "predicted_missing_fields": [
+          "employees"
+        ],
+        "reasoning": "职工总数的材料记录相互冲突",
+        "latency_ms": 0.449,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-unverified-extraction",
+        "category": "人机协同",
+        "description": "模型提取但未经人工确认的数据不能进入正式计算。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "rd_2025"
+        ],
+        "predicted_missing_fields": [
+          "rd_2025"
+        ],
+        "reasoning": "2025年研发费用尚未人工核对",
+        "latency_ms": 0.405,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-threshold-inclusive",
+        "category": "边界值",
+        "description": "销售收入恰好等于两亿元时按含边界条件处理。",
+        "rule_id": "sales",
+        "expected_status": "pass",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "20000 万元 ≤ 20000 万元",
+        "latency_ms": 0.4,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-threshold-exceeded",
+        "category": "边界值",
+        "description": "销售收入超过门槛一个最小测试单位时应判定不满足。",
+        "rule_id": "sales",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "20000.01 万元 > 20000 万元",
+        "latency_ms": 0.734,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-rd-ratio-below-threshold",
+        "category": "跨文档计算",
+        "description": "三年研发费用合计比例低于门槛时应判定不满足。",
+        "rule_id": "rd_ratio",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "三年合计 90 ÷ 9800 = 0.92%；最近一年销售 4200 万元，对应门槛 5%",
+        "latency_ms": 0.443,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-wrong-accounting-period",
+        "category": "期间错配",
+        "description": "数值存在但所属年度错误时不得复用。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "rd_2024"
+        ],
+        "predicted_missing_fields": [
+          "rd_2024"
+        ],
+        "reasoning": "2024年研发费用需要 2024 期间数据，当前标记为 2023",
+        "latency_ms": 0.387,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-domestic-rd-impossible",
+        "category": "逻辑冲突",
+        "description": "境内研发费用超过全部研发费用时应阻断结论。",
+        "rule_id": "domestic",
+        "expected_status": "conflict",
+        "predicted_status": "conflict",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [
+          "domestic_rd_2023",
+          "domestic_rd_2024",
+          "domestic_rd_2025",
+          "rd_2023",
+          "rd_2024",
+          "rd_2025",
+          "registration_date"
+        ],
+        "reasoning": "某年度境内研发费用超过全部研发费用",
+        "latency_ms": 0.529,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-zero-denominator",
+        "category": "异常数值",
+        "description": "比例分母为零时必须转人工复核。",
+        "rule_id": "staff_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "tech_staff",
+          "employees"
+        ],
+        "predicted_missing_fields": [
+          "tech_staff",
+          "employees"
+        ],
+        "reasoning": "分母必须大于零，不能推断比例",
+        "latency_ms": 0.438,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-boolean-is-not-number",
+        "category": "类型安全",
+        "description": "布尔值不得被当作人数一参与计算。",
+        "rule_id": "staff",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "employees"
+        ],
+        "predicted_missing_fields": [
+          "employees"
+        ],
+        "reasoning": "职工总数需要数值，不能使用布尔值",
+        "latency_ms": 0.34,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-missing-unit",
+        "category": "单位校验",
+        "description": "缺少币值单位时不得默认按万元解释。",
+        "rule_id": "sales",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "sales_2025"
+        ],
+        "predicted_missing_fields": [
+          "sales_2025"
+        ],
+        "reasoning": "2025年销售收入单位应为万元，当前为未标注",
+        "latency_ms": 1.059,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-hightech-income-below-threshold",
+        "category": "比例计算",
+        "description": "高新收入占比低于门槛时应判定不满足。",
+        "rule_id": "hightech",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "2000 ÷ 4400 = 45.45%；要求 ≥ 60%",
+        "latency_ms": 1.064,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-new-company-age",
+        "category": "时间推理",
+        "description": "注册未满一年应明确判定该自动检查不满足。",
+        "rule_id": "age",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "截至 2026-09-22，注册 144 天；按满 365 天预核查",
+        "latency_ms": 0.429,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-fast-track-does-not-bypass-scale",
+        "category": "规则组合",
+        "description": "直通车资格不能绕过企业规模基础条件。",
+        "rule_id": "staff",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "501 人 > 500 人",
+        "latency_ms": 0.344,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      }
+    ]
+  },
+  "llm_baseline": {
+    "name": "Qwen3 8B 单模型规则判断基线",
+    "model": "qwen3:8b",
+    "summary": {
+      "case_count": 15,
+      "status_correct": 10,
+      "status_accuracy": 0.6667,
+      "exact_case_count": 8,
+      "exact_case_accuracy": 0.5333,
+      "missing_field_cases": 7,
+      "missing_field_exact": 2,
+      "missing_field_accuracy": 0.2857,
+      "categories": {
+        "完整材料": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "缺失材料": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "证据冲突": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "人机协同": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "边界值": {
+          "cases": 2,
+          "exact": 2,
+          "accuracy": 1.0
+        },
+        "跨文档计算": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "期间错配": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "逻辑冲突": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "异常数值": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "类型安全": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "单位校验": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "比例计算": {
+          "cases": 1,
+          "exact": 0,
+          "accuracy": 0.0
+        },
+        "时间推理": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        },
+        "规则组合": {
+          "cases": 1,
+          "exact": 1,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "total_latency_ms": 13693.312,
+    "cases": [
+      {
+        "id": "hnte-complete-package",
+        "category": "完整材料",
+        "description": "完整且已核对的企业材料应得到稳定通过结论。",
+        "rule_id": "staff_ratio",
+        "expected_status": "pass",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "科技人员比例为24/80=30% ≥ 10%",
+        "error": null,
+        "latency_ms": 1274.381,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-missing-rd-year",
+        "category": "缺失材料",
+        "description": "缺少一个会计年度研发费用时不得按零值或通过处理。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "rd_2024"
+        ],
+        "predicted_missing_fields": [
+          "rd_2024"
+        ],
+        "reasoning": "2024年研发费用数据缺失",
+        "error": null,
+        "latency_ms": 1084.591,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-conflicting-headcount",
+        "category": "证据冲突",
+        "description": "职工总数材料冲突时不得继续给出人员比例结论。",
+        "rule_id": "staff_ratio",
+        "expected_status": "conflict",
+        "predicted_status": "conflict",
+        "expected_missing_fields": [
+          "employees"
+        ],
+        "predicted_missing_fields": [],
+        "reasoning": "员工总数状态为 conflict，无法确定科技人员比例是否满足要求",
+        "error": null,
+        "latency_ms": 759.694,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": false,
+          "exact": false
+        }
+      },
+      {
+        "id": "hnte-unverified-extraction",
+        "category": "人机协同",
+        "description": "模型提取但未经人工确认的数据不能进入正式计算。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "rd_2025"
+        ],
+        "predicted_missing_fields": [
+          "rd_2025"
+        ],
+        "reasoning": "2025年研发费用未确认",
+        "error": null,
+        "latency_ms": 791.121,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": true,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-threshold-inclusive",
+        "category": "边界值",
+        "description": "销售收入恰好等于两亿元时按含边界条件处理。",
+        "rule_id": "sales",
+        "expected_status": "pass",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "年销售收入20000万元，符合不超过2亿元的要求。",
+        "error": null,
+        "latency_ms": 773.168,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-threshold-exceeded",
+        "category": "边界值",
+        "description": "销售收入超过门槛一个最小测试单位时应判定不满足。",
+        "rule_id": "sales",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "年销售收入超过2亿元",
+        "error": null,
+        "latency_ms": 433.735,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-rd-ratio-below-threshold",
+        "category": "跨文档计算",
+        "description": "三年研发费用合计比例低于门槛时应判定不满足。",
+        "rule_id": "rd_ratio",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "2023年研发费用比例为1.25%，低于5%；2024年研发费用比例为0.94%，低于4%；2025年研发费用比例为0.71%，低于4%。",
+        "error": null,
+        "latency_ms": 1616.606,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "hnte-wrong-accounting-period",
+        "category": "期间错配",
+        "description": "数值存在但所属年度错误时不得复用。",
+        "rule_id": "rd_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "fail",
+        "expected_missing_fields": [
+          "rd_2024"
+        ],
+        "predicted_missing_fields": [],
+        "reasoning": "2024年研发费用比例为220/3200=6.875%，低于4%；2025年研发费用比例为300/4200=7.14%，高于4%。2024年不满足4%的要求，因此整体不满足。",
+        "error": null,
+        "latency_ms": 1936.986,
+        "score": {
+          "status_correct": false,
+          "missing_fields_correct": false,
+          "exact": false
+        }
+      },
+      {
+        "id": "hnte-domestic-rd-impossible",
+        "category": "逻辑冲突",
+        "description": "境内研发费用超过全部研发费用时应阻断结论。",
+        "rule_id": "domestic",
+        "expected_status": "conflict",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "境内研发费用比例均不低于60%",
+        "error": null,
+        "latency_ms": 806.922,
+        "score": {
+          "status_correct": false,
+          "missing_fields_correct": null,
+          "exact": false
+        }
+      },
+      {
+        "id": "hnte-zero-denominator",
+        "category": "异常数值",
+        "description": "比例分母为零时必须转人工复核。",
+        "rule_id": "staff_ratio",
+        "expected_status": "unknown",
+        "predicted_status": "unknown",
+        "expected_missing_fields": [
+          "tech_staff",
+          "employees"
+        ],
+        "predicted_missing_fields": [],
+        "reasoning": "分母为零",
+        "error": null,
+        "latency_ms": 481.636,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": false,
+          "exact": false
+        }
+      },
+      {
+        "id": "sme-boolean-is-not-number",
+        "category": "类型安全",
+        "description": "布尔值不得被当作人数一参与计算。",
+        "rule_id": "staff",
+        "expected_status": "unknown",
+        "predicted_status": "pass",
+        "expected_missing_fields": [
+          "employees"
+        ],
+        "predicted_missing_fields": [],
+        "reasoning": "职工总数确认为true，且单位和期间符合要求，未超过500人",
+        "error": null,
+        "latency_ms": 812.263,
+        "score": {
+          "status_correct": false,
+          "missing_fields_correct": false,
+          "exact": false
+        }
+      },
+      {
+        "id": "sme-missing-unit",
+        "category": "单位校验",
+        "description": "缺少币值单位时不得默认按万元解释。",
+        "rule_id": "sales",
+        "expected_status": "unknown",
+        "predicted_status": "fail",
+        "expected_missing_fields": [
+          "sales_2025"
+        ],
+        "predicted_missing_fields": [],
+        "reasoning": "年销售收入为4200万元，超过2亿元的限制",
+        "error": null,
+        "latency_ms": 694.742,
+        "score": {
+          "status_correct": false,
+          "missing_fields_correct": false,
+          "exact": false
+        }
+      },
+      {
+        "id": "hnte-hightech-income-below-threshold",
+        "category": "比例计算",
+        "description": "高新收入占比低于门槛时应判定不满足。",
+        "rule_id": "hightech",
+        "expected_status": "fail",
+        "predicted_status": "pass",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "高新收入比例为2000/4400≈45.45%，低于60%",
+        "error": null,
+        "latency_ms": 948.657,
+        "score": {
+          "status_correct": false,
+          "missing_fields_correct": null,
+          "exact": false
+        }
+      },
+      {
+        "id": "hnte-new-company-age",
+        "category": "时间推理",
+        "description": "注册未满一年应明确判定该自动检查不满足。",
+        "rule_id": "age",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "企业注册成立时间不足一年",
+        "error": null,
+        "latency_ms": 492.258,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      },
+      {
+        "id": "sme-fast-track-does-not-bypass-scale",
+        "category": "规则组合",
+        "description": "直通车资格不能绕过企业规模基础条件。",
+        "rule_id": "staff",
+        "expected_status": "fail",
+        "predicted_status": "fail",
+        "expected_missing_fields": null,
+        "predicted_missing_fields": [],
+        "reasoning": "职工总数超过500人",
+        "error": null,
+        "latency_ms": 500.967,
+        "score": {
+          "status_correct": true,
+          "missing_fields_correct": null,
+          "exact": true
+        }
+      }
+    ]
+  }
+}

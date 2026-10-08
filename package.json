@@ -1,0 +1,9 @@
+{
+  "name": "qicetong-beijing",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "企策通北京版：浏览器端到端验证",
+  "scripts": {"test:ui": "node tests/browser.cjs"},
+  "devDependencies": {"playwright": "^1.56.0"}
+}

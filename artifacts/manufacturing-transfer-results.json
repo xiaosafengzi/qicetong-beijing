@@ -1,0 +1,38 @@
+{
+  "data_type": "synthetic_transfer_demonstration",
+  "industry": "manufacturing_quality",
+  "engine_reused": true,
+  "mcp_contract_tested": false,
+  "cases": [
+    {
+      "id": "mfg-pass",
+      "expected": "pass",
+      "actual": "pass",
+      "match": true,
+      "check_count": 3,
+      "graph_nodes": 13,
+      "graph_edges": 14
+    },
+    {
+      "id": "mfg-fail",
+      "expected": "fail",
+      "actual": "fail",
+      "match": true,
+      "check_count": 3,
+      "graph_nodes": 13,
+      "graph_edges": 14
+    },
+    {
+      "id": "mfg-unknown",
+      "expected": "unknown",
+      "actual": "unknown",
+      "match": true,
+      "check_count": 3,
+      "graph_nodes": 12,
+      "graph_edges": 13
+    }
+  ],
+  "matched": 3,
+  "total": 3,
+  "claim_boundary": "只证明模板可装入现有证据引擎；不代表制造业真实规则或真实批次效果。"
+}

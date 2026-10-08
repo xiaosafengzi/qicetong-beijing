@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qicetong.local/schemas/authorized-case.json",
+  "title": "企策通授权脱敏企业案例",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "authorization", "profile", "facts", "evidence", "gold_standard", "provenance"],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^BJC-[0-9]{3}$"},
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_sha256", "signed_date", "internal_evaluation", "defense_demo", "open_source", "expires_at", "withdrawal_contact"],
+      "properties": {
+        "document_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "signed_date": {"type": "string", "format": "date"},
+        "internal_evaluation": {"const": true},
+        "defense_demo": {"type": "boolean"},
+        "open_source": {"type": "boolean"},
+        "expires_at": {"type": "string", "format": "date"},
+        "withdrawal_contact": {"type": "string", "minLength": 1}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["district", "industry", "operating_years"],
+      "properties": {
+        "district": {"type": "string"},
+        "industry": {"type": "string"},
+        "operating_years": {"type": "integer", "minimum": 0}
+      }
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["value", "unit", "period", "status", "evidence"],
+        "properties": {
+          "value": {},
+          "unit": {"type": "string"},
+          "period": {"type": "string"},
+          "status": {"enum": ["confirmed", "unverified", "conflict", "missing", "not_applicable"]},
+          "evidence": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "document_type", "locator", "snippet", "file_sha256"],
+        "properties": {
+          "id": {"type": "string"},
+          "document_type": {"type": "string"},
+          "locator": {"type": "string"},
+          "snippet": {"type": "string", "maxLength": 500},
+          "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    },
+    "gold_standard": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["policy_id", "rule_id", "expected_status", "missing_fields", "reason", "annotator_id", "review_state"],
+        "properties": {
+          "policy_id": {"type": "string"},
+          "rule_id": {"type": "string"},
+          "expected_status": {"enum": ["pass", "fail", "unknown", "conflict"]},
+          "missing_fields": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "reason": {"type": "string", "minLength": 1},
+          "annotator_id": {"type": "string", "pattern": "^ANN-[0-9]{2,}$"},
+          "review_state": {"enum": ["draft", "reviewed", "adjudicated"]}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["received_at", "deidentified_at", "reviewed_by", "split"],
+      "properties": {
+        "received_at": {"type": "string", "format": "date-time"},
+        "deidentified_at": {"type": "string", "format": "date-time"},
+        "reviewed_by": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true},
+        "split": {"enum": ["development", "blind_test", "holdout"]}
+      }
+    }
+  }
+}

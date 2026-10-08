@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "transport": "SSE",
+  "url": "http://127.0.0.1:8766/sse",
+  "tools": [
+    "list_policy_catalog",
+    "list_enterprises",
+    "search_policy_evidence",
+    "review_enterprise",
+    "get_evidence_graph",
+    "compare_policy_versions",
+    "preview_uploaded_policy_change",
+    "export_review_report",
+    "get_system_evaluation"
+  ],
+  "catalog_call_succeeded": true,
+  "at": "2026-09-26T14:21:55.437948+00:00",
+  "scope": "MCP SDK client to local service; not a Nexent platform integration test"
+}

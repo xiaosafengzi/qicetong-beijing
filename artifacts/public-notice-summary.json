@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-08T04:09:31.854278+00:00",
+  "historical_summary_only": true,
+  "records_distributed": false,
+  "original_result_sha256": "6414468114ab899bb38627f21b8938918a0ad28575830c068a3569a2bba4eedf",
+  "dataset": {
+    "name": "北京市2026年第一批拟入库科技型中小企业公开记录",
+    "type": "public_notice_aggregate_only",
+    "authorized_company_case_count": 0,
+    "source_url": "https://kw.beijing.gov.cn/zwgk/tzgg/202607/t20260709_4754163.html",
+    "claim_boundary": "本仓库仅分发历史汇总，未附企业名册；不是克隆后重新运行的结果，也不代表资格准确率或企业授权。"
+  },
+  "summary": {
+    "record_count": 50,
+    "distinct_company_count": 50,
+    "district_count": 16,
+    "abstained_count": 50,
+    "unsupported_pass_claim_count": 0
+  },
+  "rows": []
+}

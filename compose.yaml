@@ -1,0 +1,19 @@
+services:
+  qicetong-web:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - qicetong-data:/app/runtime
+  qicetong-mcp:
+    build: .
+    command: ["python", "-m", "qicetong.mcp_server"]
+    environment:
+      QCT_MCP_HOST: "0.0.0.0"
+      QCT_MCP_PORT: "8766"
+    ports:
+      - "127.0.0.1:8766:8766"
+    volumes:
+      - qicetong-data:/app/runtime
+volumes:
+  qicetong-data:

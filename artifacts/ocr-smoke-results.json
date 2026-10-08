@@ -1,0 +1,12 @@
+{
+  "sample": "synthetic_image",
+  "status": "ocr_draft",
+  "line_count": 1,
+  "recognized_lines": [
+    "职工总数:80,人,2025"
+  ],
+  "proposal_fields": [
+    "employees"
+  ],
+  "visual_verified": false
+}

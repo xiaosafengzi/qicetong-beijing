@@ -1,0 +1,30 @@
+{
+  "data_type": "synthetic_transfer_demonstration",
+  "policy": {
+    "id": "manufacturing-incoming-v1",
+    "family": "manufacturing_quality",
+    "name": "制造业来料抽检预审（模拟内部规范）",
+    "region": "演示工厂",
+    "year": 2026,
+    "version": "内部演示规范 v1",
+    "state": "demo",
+    "description": "对供应商准入、抽样合格率和严重缺陷数作批次预核查",
+    "published": "2026-09-01",
+    "start": "2026-09-01",
+    "deadlines": ["2026-09-30"],
+    "window_labels": {"open": "抽检记录期内", "closed": "该批次抽检记录期已结束"},
+    "source": {"id": "synthetic-manufacturing-v1", "title": "演示用工厂来料验收规范（模拟）", "url": "", "published": "2026-09-01", "authority": "演示模板，无外部权威效力"},
+    "scope_note": "所有批次和阈值均为模拟；不代表真实制造企业、客户合同或行业标准。",
+    "manual_checks": ["由质检员核验抽样方案和严重缺陷定义", "由采购人员确认供应商准入记录"],
+    "rules": [
+      {"id": "supplier", "title": "供应商已准入", "fields": ["supplier_approved"], "op": "eq", "expected": true, "clause": "内部演示规范第1项", "quote": "供应商须完成准入核验。"},
+      {"id": "pass_ratio", "title": "抽样合格率不低于98%", "fields": ["accepted_units", "inspected_units"], "op": "ratio", "threshold": 0.98, "unit": "项", "period": "2026-09", "clause": "内部演示规范第2项", "quote": "本批次抽样合格率不低于98%。"},
+      {"id": "critical", "title": "严重缺陷数为0", "fields": ["critical_defects"], "op": "lte", "threshold": 0, "unit": "项", "period": "2026-09", "clause": "内部演示规范第3项", "quote": "本批次严重缺陷数为0。"}
+    ]
+  },
+  "examples": [
+    {"id": "mfg-pass", "name": "批次 A（模拟）", "expected_status": "pass", "facts": {"supplier_approved": [true, "", ""], "accepted_units": [99, "项", "2026-09"], "inspected_units": [100, "项", "2026-09"], "critical_defects": [0, "项", "2026-09"]}},
+    {"id": "mfg-fail", "name": "批次 B（模拟）", "expected_status": "fail", "facts": {"supplier_approved": [true, "", ""], "accepted_units": [96, "项", "2026-09"], "inspected_units": [100, "项", "2026-09"], "critical_defects": [1, "项", "2026-09"]}},
+    {"id": "mfg-unknown", "name": "批次 C（模拟）", "expected_status": "unknown", "facts": {"supplier_approved": [true, "", ""], "accepted_units": [99, "项", "2026-09"], "critical_defects": [0, "项", "2026-09"]}}
+  ]
+}

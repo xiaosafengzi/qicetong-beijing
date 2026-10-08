@@ -1,0 +1,9 @@
+{
+  "name": "qicetong-beijing",
+  "server_url": "http://host.docker.internal:8767/mcp",
+  "description": "企策通北京企业政策材料预审与证据追溯工具",
+  "source": "local",
+  "tags": ["北京政策", "企业预审", "证据追溯"],
+  "enabled": true,
+  "skip_health_check": false
+}

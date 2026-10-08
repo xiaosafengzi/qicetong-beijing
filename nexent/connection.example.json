@@ -1,0 +1,10 @@
+{
+  "schema_note": "人工配置参考，不是已从 Nexent 导出的 Agent JSON；实际导出需在平台导入、运行并验证后完成。",
+  "name": "qicetong-beijing",
+  "local_sse_url": "http://127.0.0.1:8766/sse",
+  "container_network_sse_url": "http://host.docker.internal:8766/sse",
+  "transport": "sse",
+  "tools": ["list_policy_catalog", "list_enterprises", "search_policy_evidence", "review_enterprise", "get_evidence_graph", "compare_policy_versions", "export_review_report"],
+  "skills": ["policy-applicability", "enterprise-precheck", "policy-change-review", "precheck-report"],
+  "status": "requires_live_nexent_import_and_validation"
+}

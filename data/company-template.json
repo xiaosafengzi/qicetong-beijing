@@ -1,0 +1,522 @@
+{
+  "id": "demo-01",
+  "name": "北京星河智研科技有限公司（模拟）",
+  "district": "海淀区",
+  "industry": "软件和信息技术服务业",
+  "is_demo": true,
+  "note": "完整材料样例：用于展示数量指标、年度计算和证据链。",
+  "facts": {
+    "city": {
+      "value": "北京市",
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-city"
+      ]
+    },
+    "resident_enterprise": {
+      "value": true,
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-resident_enterprise"
+      ]
+    },
+    "registration_date": {
+      "value": "2020-03-12",
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-registration_date"
+      ]
+    },
+    "allowed_industry": {
+      "value": true,
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-allowed_industry"
+      ]
+    },
+    "core_ip": {
+      "value": true,
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-core_ip"
+      ]
+    },
+    "supported_domain": {
+      "value": true,
+      "unit": "",
+      "period": "",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-supported_domain"
+      ]
+    },
+    "employees": {
+      "value": 80,
+      "unit": "人",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-employees"
+      ]
+    },
+    "tech_staff": {
+      "value": 24,
+      "unit": "人",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-tech_staff"
+      ]
+    },
+    "ip_class1": {
+      "value": 2,
+      "unit": "项",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-ip_class1"
+      ]
+    },
+    "ip_class2": {
+      "value": 3,
+      "unit": "项",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-ip_class2"
+      ]
+    },
+    "fast_track": {
+      "value": false,
+      "unit": "",
+      "period": "2026",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-fast_track"
+      ]
+    },
+    "sme_compliance": {
+      "value": true,
+      "unit": "",
+      "period": "2025-2026",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-sme_compliance"
+      ]
+    },
+    "hnte_compliance": {
+      "value": true,
+      "unit": "",
+      "period": "申请前一年",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-hnte_compliance"
+      ]
+    },
+    "sales_2023": {
+      "value": 2400,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-sales_2023"
+      ]
+    },
+    "rd_2023": {
+      "value": 150,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-rd_2023"
+      ]
+    },
+    "domestic_rd_2023": {
+      "value": 135.0,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-domestic_rd_2023"
+      ]
+    },
+    "assets_2023": {
+      "value": 3600.0,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-assets_2023"
+      ]
+    },
+    "cost_2023": {
+      "value": 1920.0,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-cost_2023"
+      ]
+    },
+    "total_income_2023": {
+      "value": 2600,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-total_income_2023"
+      ]
+    },
+    "hightech_income_2023": {
+      "value": 1968.0,
+      "unit": "万元",
+      "period": "2023",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-hightech_income_2023"
+      ]
+    },
+    "sales_2024": {
+      "value": 3200,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-sales_2024"
+      ]
+    },
+    "rd_2024": {
+      "value": 220,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-rd_2024"
+      ]
+    },
+    "domestic_rd_2024": {
+      "value": 198.0,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-domestic_rd_2024"
+      ]
+    },
+    "assets_2024": {
+      "value": 4800.0,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-assets_2024"
+      ]
+    },
+    "cost_2024": {
+      "value": 2560.0,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-cost_2024"
+      ]
+    },
+    "total_income_2024": {
+      "value": 3400,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-total_income_2024"
+      ]
+    },
+    "hightech_income_2024": {
+      "value": 2624.0,
+      "unit": "万元",
+      "period": "2024",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-hightech_income_2024"
+      ]
+    },
+    "sales_2025": {
+      "value": 4200,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-sales_2025"
+      ]
+    },
+    "rd_2025": {
+      "value": 300,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-rd_2025"
+      ]
+    },
+    "domestic_rd_2025": {
+      "value": 270.0,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-domestic_rd_2025"
+      ]
+    },
+    "assets_2025": {
+      "value": 6300.0,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-assets_2025"
+      ]
+    },
+    "cost_2025": {
+      "value": 3360.0,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-cost_2025"
+      ]
+    },
+    "total_income_2025": {
+      "value": 4400,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-total_income_2025"
+      ]
+    },
+    "hightech_income_2025": {
+      "value": 3444.0,
+      "unit": "万元",
+      "period": "2025",
+      "status": "confirmed",
+      "evidence": [
+        "demo-01-hightech_income_2025"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "demo-01-city",
+      "title": "企业资料（模拟）",
+      "locator": "字段 city",
+      "text": "仅用于系统演示的虚构企业材料。\ncity：北京市 ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-resident_enterprise",
+      "title": "企业资料（模拟）",
+      "locator": "字段 resident_enterprise",
+      "text": "仅用于系统演示的虚构企业材料。\nresident_enterprise：True ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-registration_date",
+      "title": "企业资料（模拟）",
+      "locator": "字段 registration_date",
+      "text": "仅用于系统演示的虚构企业材料。\nregistration_date：2020-03-12 ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-allowed_industry",
+      "title": "企业资料（模拟）",
+      "locator": "字段 allowed_industry",
+      "text": "仅用于系统演示的虚构企业材料。\nallowed_industry：True ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-core_ip",
+      "title": "企业资料（模拟）",
+      "locator": "字段 core_ip",
+      "text": "仅用于系统演示的虚构企业材料。\ncore_ip：True ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-supported_domain",
+      "title": "企业资料（模拟）",
+      "locator": "字段 supported_domain",
+      "text": "仅用于系统演示的虚构企业材料。\nsupported_domain：True ；所属期间：基本信息"
+    },
+    {
+      "id": "demo-01-employees",
+      "title": "人员与知识产权台账（模拟）",
+      "locator": "字段 employees",
+      "text": "仅用于系统演示的虚构企业材料。\nemployees：80 人；所属期间：2025"
+    },
+    {
+      "id": "demo-01-tech_staff",
+      "title": "人员与知识产权台账（模拟）",
+      "locator": "字段 tech_staff",
+      "text": "仅用于系统演示的虚构企业材料。\ntech_staff：24 人；所属期间：2025"
+    },
+    {
+      "id": "demo-01-ip_class1",
+      "title": "人员与知识产权台账（模拟）",
+      "locator": "字段 ip_class1",
+      "text": "仅用于系统演示的虚构企业材料。\nip_class1：2 项；所属期间：2025"
+    },
+    {
+      "id": "demo-01-ip_class2",
+      "title": "人员与知识产权台账（模拟）",
+      "locator": "字段 ip_class2",
+      "text": "仅用于系统演示的虚构企业材料。\nip_class2：3 项；所属期间：2025"
+    },
+    {
+      "id": "demo-01-fast_track",
+      "title": "直通车资质核验（模拟）",
+      "locator": "字段 fast_track",
+      "text": "仅用于系统演示的虚构企业材料。\nfast_track：False ；所属期间：2026"
+    },
+    {
+      "id": "demo-01-sme_compliance",
+      "title": "信用与事故核查说明（模拟）",
+      "locator": "字段 sme_compliance",
+      "text": "仅用于系统演示的虚构企业材料。\nsme_compliance：True ；所属期间：2025-2026"
+    },
+    {
+      "id": "demo-01-hnte_compliance",
+      "title": "信用与事故核查说明（模拟）",
+      "locator": "字段 hnte_compliance",
+      "text": "仅用于系统演示的虚构企业材料。\nhnte_compliance：True ；所属期间：申请前一年"
+    },
+    {
+      "id": "demo-01-sales_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 sales_2023",
+      "text": "仅用于系统演示的虚构企业材料。\nsales_2023：2400 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-rd_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 rd_2023",
+      "text": "仅用于系统演示的虚构企业材料。\nrd_2023：150 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-domestic_rd_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 domestic_rd_2023",
+      "text": "仅用于系统演示的虚构企业材料。\ndomestic_rd_2023：135.0 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-assets_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 assets_2023",
+      "text": "仅用于系统演示的虚构企业材料。\nassets_2023：3600.0 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-cost_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 cost_2023",
+      "text": "仅用于系统演示的虚构企业材料。\ncost_2023：1920.0 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-total_income_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 total_income_2023",
+      "text": "仅用于系统演示的虚构企业材料。\ntotal_income_2023：2600 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-hightech_income_2023",
+      "title": "2023年度财务数据表（模拟）",
+      "locator": "字段 hightech_income_2023",
+      "text": "仅用于系统演示的虚构企业材料。\nhightech_income_2023：1968.0 万元；所属期间：2023"
+    },
+    {
+      "id": "demo-01-sales_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 sales_2024",
+      "text": "仅用于系统演示的虚构企业材料。\nsales_2024：3200 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-rd_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 rd_2024",
+      "text": "仅用于系统演示的虚构企业材料。\nrd_2024：220 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-domestic_rd_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 domestic_rd_2024",
+      "text": "仅用于系统演示的虚构企业材料。\ndomestic_rd_2024：198.0 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-assets_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 assets_2024",
+      "text": "仅用于系统演示的虚构企业材料。\nassets_2024：4800.0 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-cost_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 cost_2024",
+      "text": "仅用于系统演示的虚构企业材料。\ncost_2024：2560.0 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-total_income_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 total_income_2024",
+      "text": "仅用于系统演示的虚构企业材料。\ntotal_income_2024：3400 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-hightech_income_2024",
+      "title": "2024年度财务数据表（模拟）",
+      "locator": "字段 hightech_income_2024",
+      "text": "仅用于系统演示的虚构企业材料。\nhightech_income_2024：2624.0 万元；所属期间：2024"
+    },
+    {
+      "id": "demo-01-sales_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 sales_2025",
+      "text": "仅用于系统演示的虚构企业材料。\nsales_2025：4200 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-rd_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 rd_2025",
+      "text": "仅用于系统演示的虚构企业材料。\nrd_2025：300 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-domestic_rd_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 domestic_rd_2025",
+      "text": "仅用于系统演示的虚构企业材料。\ndomestic_rd_2025：270.0 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-assets_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 assets_2025",
+      "text": "仅用于系统演示的虚构企业材料。\nassets_2025：6300.0 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-cost_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 cost_2025",
+      "text": "仅用于系统演示的虚构企业材料。\ncost_2025：3360.0 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-total_income_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 total_income_2025",
+      "text": "仅用于系统演示的虚构企业材料。\ntotal_income_2025：4400 万元；所属期间：2025"
+    },
+    {
+      "id": "demo-01-hightech_income_2025",
+      "title": "2025年度财务数据表（模拟）",
+      "locator": "字段 hightech_income_2025",
+      "text": "仅用于系统演示的虚构企业材料。\nhightech_income_2025：3444.0 万元；所属期间：2025"
+    }
+  ]
+}

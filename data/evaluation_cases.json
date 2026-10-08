@@ -1,0 +1,184 @@
+[
+  {
+    "id": "hnte-complete-package",
+    "category": "完整材料",
+    "description": "完整且已核对的企业材料应得到稳定通过结论。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "staff_ratio",
+    "mutations": [],
+    "expected_status": "pass"
+  },
+  {
+    "id": "hnte-missing-rd-year",
+    "category": "缺失材料",
+    "description": "缺少一个会计年度研发费用时不得按零值或通过处理。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "rd_ratio",
+    "mutations": [{"path": "facts.rd_2024", "delete": true}],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["rd_2024"]
+  },
+  {
+    "id": "hnte-conflicting-headcount",
+    "category": "证据冲突",
+    "description": "职工总数材料冲突时不得继续给出人员比例结论。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "staff_ratio",
+    "mutations": [{"path": "facts.employees.status", "value": "conflict"}],
+    "expected_status": "conflict",
+    "expected_missing_fields": ["employees"]
+  },
+  {
+    "id": "hnte-unverified-extraction",
+    "category": "人机协同",
+    "description": "模型提取但未经人工确认的数据不能进入正式计算。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "rd_ratio",
+    "mutations": [{"path": "facts.rd_2025.status", "value": "unverified"}],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["rd_2025"]
+  },
+  {
+    "id": "sme-threshold-inclusive",
+    "category": "边界值",
+    "description": "销售收入恰好等于两亿元时按含边界条件处理。",
+    "base_company_id": "demo-01",
+    "policy_id": "sme-bj-2026",
+    "as_of": "2026-08-31",
+    "rule_id": "sales",
+    "mutations": [{"path": "facts.sales_2025.value", "value": 20000}],
+    "expected_status": "pass"
+  },
+  {
+    "id": "sme-threshold-exceeded",
+    "category": "边界值",
+    "description": "销售收入超过门槛一个最小测试单位时应判定不满足。",
+    "base_company_id": "demo-01",
+    "policy_id": "sme-bj-2026",
+    "as_of": "2026-08-31",
+    "rule_id": "sales",
+    "mutations": [{"path": "facts.sales_2025.value", "value": 20000.01}],
+    "expected_status": "fail"
+  },
+  {
+    "id": "hnte-rd-ratio-below-threshold",
+    "category": "跨文档计算",
+    "description": "三年研发费用合计比例低于门槛时应判定不满足。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "rd_ratio",
+    "mutations": [
+      {"path": "facts.rd_2023.value", "value": 30},
+      {"path": "facts.rd_2024.value", "value": 30},
+      {"path": "facts.rd_2025.value", "value": 30}
+    ],
+    "expected_status": "fail"
+  },
+  {
+    "id": "hnte-wrong-accounting-period",
+    "category": "期间错配",
+    "description": "数值存在但所属年度错误时不得复用。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "rd_ratio",
+    "mutations": [{"path": "facts.rd_2024.period", "value": "2023"}],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["rd_2024"]
+  },
+  {
+    "id": "hnte-domestic-rd-impossible",
+    "category": "逻辑冲突",
+    "description": "境内研发费用超过全部研发费用时应阻断结论。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "domestic",
+    "mutations": [{"path": "facts.domestic_rd_2024.value", "value": 999}],
+    "expected_status": "conflict"
+  },
+  {
+    "id": "hnte-zero-denominator",
+    "category": "异常数值",
+    "description": "比例分母为零时必须转人工复核。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "staff_ratio",
+    "mutations": [
+      {"path": "facts.employees.value", "value": 0},
+      {"path": "facts.tech_staff.value", "value": 0}
+    ],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["tech_staff", "employees"]
+  },
+  {
+    "id": "sme-boolean-is-not-number",
+    "category": "类型安全",
+    "description": "布尔值不得被当作人数一参与计算。",
+    "base_company_id": "demo-01",
+    "policy_id": "sme-bj-2026",
+    "as_of": "2026-08-31",
+    "rule_id": "staff",
+    "mutations": [{"path": "facts.employees.value", "value": true}],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["employees"]
+  },
+  {
+    "id": "sme-missing-unit",
+    "category": "单位校验",
+    "description": "缺少币值单位时不得默认按万元解释。",
+    "base_company_id": "demo-01",
+    "policy_id": "sme-bj-2026",
+    "as_of": "2026-08-31",
+    "rule_id": "sales",
+    "mutations": [{"path": "facts.sales_2025.unit", "value": ""}],
+    "expected_status": "unknown",
+    "expected_missing_fields": ["sales_2025"]
+  },
+  {
+    "id": "hnte-hightech-income-below-threshold",
+    "category": "比例计算",
+    "description": "高新收入占比低于门槛时应判定不满足。",
+    "base_company_id": "demo-01",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "hightech",
+    "mutations": [{"path": "facts.hightech_income_2025.value", "value": 2000}],
+    "expected_status": "fail"
+  },
+  {
+    "id": "hnte-new-company-age",
+    "category": "时间推理",
+    "description": "注册未满一年应明确判定该自动检查不满足。",
+    "base_company_id": "demo-05",
+    "policy_id": "hnte-bj-2026",
+    "as_of": "2026-09-22",
+    "rule_id": "age",
+    "mutations": [],
+    "expected_status": "fail"
+  },
+  {
+    "id": "sme-fast-track-does-not-bypass-scale",
+    "category": "规则组合",
+    "description": "直通车资格不能绕过企业规模基础条件。",
+    "base_company_id": "demo-01",
+    "policy_id": "sme-bj-2026",
+    "as_of": "2026-08-31",
+    "rule_id": "staff",
+    "mutations": [
+      {"path": "facts.employees.value", "value": 501},
+      {"path": "facts.fast_track.value", "value": true}
+    ],
+    "expected_status": "fail"
+  }
+]
