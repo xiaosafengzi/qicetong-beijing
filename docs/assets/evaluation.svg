@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="585" viewBox="0 0 1200 585" role="img" aria-labelledby="title desc">
+<title id="title">企策通模拟困难案例评测</title><desc id="desc">在同一政策规则和结构化企业事实下比较确定性规则引擎与 Qwen3 8B 单模型。结果从 evaluation-results.json 读取；待补字段指标使用有字段标注的案例子集。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b9bb9"/></marker></defs>
+<rect x="0" y="0" width="1200" height="585" rx="24" fill="#ffffff" stroke="none"/>
+<text x="48" y="62" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="33" font-weight="700" fill="#172849" text-anchor="start">规则执行与单模型判断的对比</text>
+<text x="48" y="99" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="18" font-weight="400" fill="#586b87" text-anchor="start">模拟困难案例 · 同一政策规则与结构化事实 · 精确匹配指标</text>
+<rect x="50" y="126" width="15" height="15" rx="4" fill="#627fe2" stroke="none"/>
+<text x="76" y="140" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">确定性规则引擎</text>
+<rect x="287" y="126" width="15" height="15" rx="4" fill="#228c78" stroke="none"/>
+<text x="313" y="140" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">Qwen3 8B 单模型</text>
+<text x="48" y="193" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="22" font-weight="650" fill="#172849" text-anchor="start">状态判断</text>
+<text x="48" y="221" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">标注样本：15 个</text>
+<line x1="48.0" y1="242" x2="48.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="48.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">0%</text>
+<line x1="213.0" y1="242" x2="213.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="213.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">50%</text>
+<line x1="378.0" y1="242" x2="378.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="378.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">100%</text>
+<text x="48" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">确定性规则引擎</text>
+<rect x="48" y="275" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="48" y="275" width="330.0" height="36" rx="6" fill="#627fe2" stroke="none"/>
+<text x="58" y="300" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">100%</text>
+<text x="378" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#627fe2" text-anchor="end">15/15</text>
+<text x="48" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">Qwen3 8B 单模型</text>
+<rect x="48" y="383" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="48" y="383" width="220.0" height="36" rx="6" fill="#228c78" stroke="none"/>
+<text x="58" y="408" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">66.7%</text>
+<text x="378" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#228c78" text-anchor="end">10/15</text>
+<text x="428" y="193" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="22" font-weight="650" fill="#172849" text-anchor="start">案例精确匹配</text>
+<text x="428" y="221" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">标注样本：15 个</text>
+<line x1="428.0" y1="242" x2="428.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="428.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">0%</text>
+<line x1="593.0" y1="242" x2="593.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="593.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">50%</text>
+<line x1="758.0" y1="242" x2="758.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="758.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">100%</text>
+<text x="428" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">确定性规则引擎</text>
+<rect x="428" y="275" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="428" y="275" width="330.0" height="36" rx="6" fill="#627fe2" stroke="none"/>
+<text x="438" y="300" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">100%</text>
+<text x="758" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#627fe2" text-anchor="end">15/15</text>
+<text x="428" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">Qwen3 8B 单模型</text>
+<rect x="428" y="383" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="428" y="383" width="176.0" height="36" rx="6" fill="#228c78" stroke="none"/>
+<text x="438" y="408" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">53.3%</text>
+<text x="758" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#228c78" text-anchor="end">8/15</text>
+<text x="808" y="193" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="22" font-weight="650" fill="#172849" text-anchor="start">待补字段精确匹配</text>
+<text x="808" y="221" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">标注样本：7 个</text>
+<line x1="808.0" y1="242" x2="808.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="808.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">0%</text>
+<line x1="973.0" y1="242" x2="973.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="973.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">50%</text>
+<line x1="1138.0" y1="242" x2="1138.0" y2="452" stroke="#e9edf4" stroke-width="1"/>
+<text x="1138.0" y="477" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="400" fill="#586b87" text-anchor="middle">100%</text>
+<text x="808" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">确定性规则引擎</text>
+<rect x="808" y="275" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="808" y="275" width="330.0" height="36" rx="6" fill="#627fe2" stroke="none"/>
+<text x="818" y="300" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">100%</text>
+<text x="1138" y="263" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#627fe2" text-anchor="end">7/7</text>
+<text x="808" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">Qwen3 8B 单模型</text>
+<rect x="808" y="383" width="330" height="36" rx="6" fill="#f0f3f8" stroke="none"/>
+<rect x="808" y="383" width="94.286" height="36" rx="6" fill="#228c78" stroke="none"/>
+<text x="818" y="408" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="650" fill="#ffffff" text-anchor="start">28.6%</text>
+<text x="1138" y="371" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="700" fill="#228c78" text-anchor="end">2/7</text>
+<line x1="48" y1="512" x2="1152" y2="512" stroke="#dce4f0" stroke-width="1"/>
+<text x="48" y="543" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">样本类型：公开政策规则 + 模拟企业材料</text>
+<text x="48" y="568" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="14" font-weight="400" fill="#586b87" text-anchor="start">来源：artifacts/evaluation-results.json · 指标按保存的正确数 / 标注样本数计算</text>
+</svg>

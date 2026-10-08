@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="890" viewBox="0 0 1320 890" role="img" aria-labelledby="title desc">
+<title id="title">企策通系统流程</title><desc id="desc">企业材料经解析和人工确认形成事实，官方政策形成版本化规则，两者进入确定性核查并生成报告与证据图。Nexent Agent 通过 MCP 编排核查、检索和版本影响分析。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b9bb9"/></marker></defs>
+<rect x="0" y="0" width="1320" height="890" rx="24" fill="#ffffff" stroke="none"/>
+<text x="48" y="66" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="33" font-weight="700" fill="#172849" text-anchor="start">从材料到判断，保留完整证据路径</text>
+<text x="48" y="103" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="18" font-weight="400" fill="#586b87" text-anchor="start">Nexent 编排业务工具 · 规则引擎执行核查 · 人工确认材料事实</text>
+<rect x="32" y="130" width="1256" height="163" rx="18" fill="#f3f6ff" stroke="none"/>
+<rect x="32" y="329" width="1256" height="499" rx="18" fill="#f8fafc" stroke="none"/>
+<text x="52" y="321" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="400" fill="#586b87" text-anchor="start">浏览器工作台：材料审核与预审操作</text>
+<path d="M 614 216 L 652 216" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<path d="M 914 216 L 952 216" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<path d="M 783 272 L 783 305 L 1109 305 L 1109 363" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<path d="M 1268 216 L 1304 216 L 1304 691 L 1268 691" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 314 429 L 352 429" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 614 429 L 652 429" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 914 429 L 952 429" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 314 628 L 352 628" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 614 628 L 930 628 L 930 466 L 952 466" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M 1109 495 L 1109 635" fill="none" stroke="#8b9bb9" stroke-width="2.2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="352" y="150" width="262" height="122" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="370" y="168" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="388" y="187" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">AI</text>
+<text x="417" y="188" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">Nexent Agent</text>
+<text x="372" y="222" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">意图理解与工具编排</text>
+<text x="372" y="247" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">5 个 Skill 工作流</text>
+<rect x="652" y="150" width="262" height="122" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="670" y="168" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="688" y="187" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">↗</text>
+<text x="717" y="188" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">MCP 工具服务</text>
+<text x="672" y="222" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">9 个业务工具</text>
+<text x="672" y="247" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">HTTP / SSE / stdio</text>
+<rect x="952" y="150" width="316" height="122" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="970" y="168" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="988" y="187" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">↻</text>
+<text x="1017" y="188" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">检索与版本分析</text>
+<text x="972" y="222" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">政策证据检索</text>
+<text x="972" y="247" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">版本差异与企业影响</text>
+<text x="57" y="184" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="24" font-weight="650" fill="#172849" text-anchor="start">智能体入口</text>
+<text x="57" y="219" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="400" fill="#586b87" text-anchor="start">按任务调用工具</text>
+<text x="57" y="249" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="17" font-weight="400" fill="#586b87" text-anchor="start">组织结论与待补事项</text>
+<rect x="52" y="363" width="262" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="70" y="381" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="88" y="400" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">01</text>
+<text x="117" y="401" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">企业材料</text>
+<text x="72" y="435" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">文档 · 表格 · 图片</text>
+<text x="72" y="460" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">原文位置与文件标识</text>
+<rect x="352" y="363" width="262" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="370" y="381" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="388" y="400" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">02</text>
+<text x="417" y="401" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">解析与候选</text>
+<text x="372" y="435" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">文本解析 / OCR / 模型</text>
+<text x="372" y="460" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">逐项人工核对</text>
+<rect x="652" y="363" width="262" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="670" y="381" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="688" y="400" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">03</text>
+<text x="717" y="401" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">已确认事实</text>
+<text x="672" y="435" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">数值 · 单位 · 所属期间</text>
+<text x="672" y="460" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">审核状态与证据引用</text>
+<rect x="952" y="363" width="316" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="970" y="381" width="36" height="26" rx="7" fill="#eaf7f1" stroke="none"/>
+<text x="988" y="400" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#228c78" text-anchor="middle">04</text>
+<text x="1017" y="401" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">确定性核查</text>
+<text x="972" y="435" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">阈值 · 比例 · 期间 · 冲突</text>
+<text x="972" y="460" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">条件与受理窗口分别计算</text>
+<rect x="52" y="562" width="262" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="70" y="580" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="88" y="599" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">P</text>
+<text x="117" y="600" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">官方政策</text>
+<text x="72" y="634" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">政策条款与年度通知</text>
+<text x="72" y="659" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">来源与适用日期</text>
+<rect x="352" y="562" width="262" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="370" y="580" width="36" height="26" rx="7" fill="#edf2ff" stroke="none"/>
+<text x="388" y="599" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#627fe2" text-anchor="middle">R</text>
+<text x="417" y="600" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">版本化规则</text>
+<text x="372" y="634" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">规则 ID · 所需字段</text>
+<text x="372" y="659" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">原文出处与会计期间</text>
+<rect x="952" y="635" width="316" height="132" rx="12" fill="#ffffff" stroke="#dfe6f2"/>
+<rect x="970" y="653" width="36" height="26" rx="7" fill="#eaf7f1" stroke="none"/>
+<text x="988" y="672" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="13" font-weight="700" fill="#228c78" text-anchor="middle">05</text>
+<text x="1017" y="673" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="21" font-weight="650" fill="#172849" text-anchor="start">报告与证据图</text>
+<text x="972" y="707" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">逐项状态与引用</text>
+<text x="972" y="732" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="16" font-weight="400" fill="#586b87" text-anchor="start">待补事项与复核建议</text>
+<text x="674" y="762" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="18" font-weight="600" fill="#228c78" text-anchor="start">材料事实 + 政策规则</text>
+<line x1="48" y1="842" x2="1272" y2="842" stroke="#dce4f0" stroke-width="1"/>
+<text x="48" y="871" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">实线：业务数据与结果</text>
+<text x="286" y="871" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="start">虚线：智能体工具调用</text>
+<text x="1272" y="871" font-family="&#x27;Noto Sans SC&#x27;,&#x27;Noto Sans CJK SC&#x27;,&#x27;Microsoft YaHei&#x27;,&#x27;PingFang SC&#x27;,Arial,sans-serif" font-size="15" font-weight="400" fill="#586b87" text-anchor="end">企策通 · 北京企业政策预审</text>
+</svg>
