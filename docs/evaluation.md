@@ -4,7 +4,7 @@
 
 本评测验证企策通的确定性证据规则引擎能否稳定处理材料预审中的边界和异常情况，并与本地 `Qwen3 8B` 直接判断规则的单模型基线比较。两种方法使用同一份政策规则和同一组结构化企业事实。
 
-评测集位于 `data/evaluation_cases.json`，由公开政策规则和明确标注的模拟企业材料构造。每次运行都从静态基准数据复制案例并施加扰动，不写入工作台运行数据库。该结果不能外推为真实企业申报准确率。
+评测集位于 `data/evaluation_cases.json`，由公开政策规则和模拟企业材料构造，用于测量结构化事实核查能力。每次运行从静态基准复制案例并施加扰动，评测数据与工作台运行数据库分开保存。
 
 ## 案例覆盖
 
@@ -19,7 +19,7 @@
 | 企策通确定性证据规则引擎 v0.2.0 | 15/15，100.0% | 15/15，100.0% | 7/7，100.0% | 7.725 ms |
 | Qwen3 8B 单模型规则判断 | 10/15，66.7% | 8/15，53.3% | 2/7，28.6% | 24.610 s |
 
-以上数值来自 `artifacts/evaluation-results.json`。耗时是本机单次顺序执行的观测值，用于说明同一环境中的数量级差异，不作为跨硬件性能承诺。
+以上数值来自 `artifacts/evaluation-results.json`。耗时记录本机单次顺序执行，两种方法在同一环境中比较。
 
 单模型基线的主要失败包括：
 
@@ -37,26 +37,26 @@
 只运行确定性评测：
 
 ```powershell
-.\.venv312\Scripts\python.exe scripts\evaluate_system.py
+.\.venv\Scripts\python.exe scripts\evaluate_system.py
 ```
 
 同时运行本地模型消融：
 
 ```powershell
-.\.venv312\Scripts\python.exe scripts\evaluate_system.py --with-llm
+.\.venv\Scripts\python.exe scripts\evaluate_system.py --with-llm
 ```
 
 网页“评测中心”、REST 接口 `/api/evaluation` 和 MCP 工具 `get_system_evaluation` 均读取同一份结果文件。Nexent 端到端验证使用：
 
 ```powershell
-.\.venv312\Scripts\python.exe nexent\smoke_agent.py --mode evaluation
+.\.venv\Scripts\python.exe nexent\smoke_agent.py --mode evaluation
 ```
 
-## 尚未覆盖
+## 评测扩展
 
 - 真实脱敏企业材料上的准确率、召回率和人工节省时间；
 - OCR、表格抽取和模型候选生成的独立准确率；
 - 多地区、多行业迁移后的规则适配成本；
 - 多次模型采样的方差和不同模型之间的显著性检验。
 
-后续获得授权数据后，应由业务人员独立标注金标准，并将真实案例与本模拟困难集分开报告。
+这些指标尚待补充。真实企业评测需完整的授权材料和业务人员独立标注，结果与模拟困难集分别报告。

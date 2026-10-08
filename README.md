@@ -2,22 +2,28 @@
 
 个人开源项目：面向北京企业的政策材料预审工作台。把“政策条款 → 企业事实 → 原始材料 → 核查结果”串通，支持 Nexent 智能体通过 MCP 和 Skill 调用。可先独立运行本地规则工作台，再按需接入模型与 Nexent。
 
-## 本版实际能力
+## 功能
 
 - 北京科技型中小企业评价、高新技术企业认定两个事项；2025 / 2026 科技型中小企业申报季快照。
-- 5 个明确标注的模拟企业：完整、缺失、规模不满足、冲突、新成立。
+- 5 个模拟企业：完整、缺失、规模不满足、冲突、新成立。
 - 带材料引用的确定性规则计算；单位归一、资料期间校验、直通车与基础条件分别核查。
-- 申报条件与受理窗口分开输出。模型不能修改数值判定。
+- 分别核查申报条件与受理窗口，由规则引擎完成数值判定。
 - PDF 文字层、DOCX、XLSX、CSV、TXT 导入、SHA-256 标识、原文定位、人工确认候选。PNG/JPG 可选用本地 OCR 生成待核对草稿。
-- 可选兼容 Chat Completions 接口的文字/图片提取；提取结果仅为候选，不会自动改变企业事实。
+- 支持兼容 Chat Completions 接口的文字/图片提取，候选经人工确认后进入企业事实库。
 - 政策版本差异及企业复核、证据依赖图、Markdown 报告、操作日志。
-- 真实 MCP SDK 的 Streamable HTTP / SSE / stdio 服务、9 个工具与 5 个 Nexent Skill ZIP。
+- 基于 MCP SDK 的 Streamable HTTP / SSE / stdio 服务、9 个工具与 5 个 Nexent Skill ZIP。
 - 15 个困难案例和本地 Qwen3 8B 单模型消融；评测中心展示状态准确率、待补字段准确率和耗时。
-- 上传政策文本中的明确数值上限/比例候选、现行规则对齐与逐企业假设影响预览；候选不自动生效。
+- 上传政策的数值上限和比例候选提取、现行规则对齐、逐企业影响预览。
 - 50 条官方公开拟入库记录的资料不足拒判评测，与模拟困难案例及授权企业案例分开报告。
-- 制造业来料抽检的第二行业模拟模板，复用同一证据规则引擎验证通过/不通过/待补证三种状态；不代表真实行业效果。
+- 制造业来料抽检模拟模板，复用同一证据规则引擎处理通过、不通过和待补证三种状态。
 
-本机已完成 Nexent v2.6.0、企策通 MCP、5 个 Skills 和本地 Qwen3 8B 的实际联调。自动冒烟轨迹验证了 Agent 调用 `review_enterprise`、`get_system_evaluation`、`preview_uploaded_policy_change`，以及一次代码动作内先 `search_policy_evidence` 再 `review_enterprise`。15 个模拟困难案例中，确定性引擎状态判断为 15/15，Qwen3 8B 单模型基线为 10/15；这只证明随仓库案例上的可复现性。另有 50 条官方公开记录的资料不足拒判结果，不能算真实企业资格准确率。知识库检索仍采用本地词项匹配；概念候选基于种子术语，规则变化候选只识别明确上限和部分比例。预审仅覆盖已实现指标，最终资格认定仍有未自动化的业务条件。
+已完成 Nexent v2.6.0、企策通 MCP、5 个 Skills 和本地 Qwen3 8B 联调，验证了预审、评测、政策变化预览和“检索 → 预审”的工具调用流程。
+
+## 示例与评测
+
+15 个模拟困难案例中，确定性引擎状态判断为 **15/15**，Qwen3 8B 单模型基线为 **10/15**。另有 50 条官方公开拟入库记录的历史评测，全部在申报材料不足时返回待补证。内置企业和制造业批次均为模拟数据，当前授权企业案例为 0。评测方法、失败案例和数据来源见 [评测说明](docs/evaluation.md) 与 [公开数据说明](docs/public-data-evaluation.md)。
+
+当前检索采用本地词项匹配，概念候选来自种子术语，规则变化提取覆盖明确数值上限和部分比例。工作台核查已编码指标，其余认定条件由业务人员复核，具体项目见 [架构说明](docs/architecture.md)。
 
 ## 在当前电脑启动
 
@@ -49,15 +55,15 @@ py -3.14 -m venv .venv
 
 `requirements.lock.txt` 固定了本机 Windows/Python 3.14 实测版本；其他 Python 版本或系统先使用 `requirements.txt`。浏览器页面不依赖 npm 构建或外部 CDN。
 
-需要离线图片识别时，再运行 `.\.venv\Scripts\python.exe -m pip install -r requirements-ocr.txt`。上传 PNG/JPG 后，在材料详情点击“本地 OCR 识别”；候选只有在用户打开原图逐项核对并勾选确认后才可采纳。已用模拟图片实测识别与浏览器确认流程。扫描 PDF 仍须先逐页转为图片；本版不批量 OCR PDF。
+需要离线图片识别时，运行 `.\.venv\Scripts\python.exe -m pip install -r requirements-ocr.txt`。上传 PNG/JPG 后，在材料详情点击“本地 OCR 识别”，打开原图逐项核对并勾选确认，即可采纳候选。模拟图片的识别与浏览器确认流程已通过测试。扫描 PDF 需先逐页转为图片。
 
 Docker 方案：`docker compose up --build -d`。Nexent 的完整本机部署使用 `START-NEXENT.cmd`，详见 `nexent/NEXENT-SETUP.md`。
 
 ## 可选模型提取
 
-将 `.env.example` 复制为 `.env`，在本机填写兼容接口的基础地址（通常包含 `/v1`）、文本模型、密钥，及可选视觉模型。不要提交 `.env`。刷新页面后，在企业材料详情点击“使用模型提取候选”。点击会把该份材料发送到配置的服务商；不自动发送其他材料。
+将 `.env.example` 复制为 `.env`，在本机填写兼容接口的基础地址（通常包含 `/v1`）、文本模型、密钥及可选视觉模型。`.env` 已列入 Git 忽略规则。刷新页面后，在企业材料详情点击“使用模型提取候选”，系统会将所选材料发送到配置的模型服务。
 
-只对能在原文中找到连续引用的文本候选提供确认入口；模型图像识别和本地 OCR 的结果都作为未核验草稿。无文字层的 PDF 需先转换为图片，原型不自动批量 OCR。未配置模型时仍可使用本地 OCR、规则和结构化补证流程。
+文本候选通过连续原文引用核对后提供确认入口；图片识别结果通过原图逐项核对。无模型服务时，可使用本地 OCR、规则核查和结构化补证流程。
 
 ## 一个五分钟演示
 
@@ -69,7 +75,7 @@ Docker 方案：`docker compose up --build -d`。Nexent 的完整本机部署使
 6. 切换科技型中小企业评价，看到“条件满足”与“填报已截止”同时成立。
 7. 查看版本演进、证据图并导出报告。
 
-演示日期为固定回放日期；默认界面使用机器当前日期。不得把历史回放截图当作实时申报信息。
+演示使用固定回放日期；日常核查默认使用机器当前日期，受理窗口按所选日期计算。
 
 ## 检查与资料
 
@@ -84,30 +90,30 @@ Docker 方案：`docker compose up --build -d`。Nexent 的完整本机部署使
 
 公开资料评测仅附历史汇总。要重跑 `scripts/evaluate_public_notice.py`，须先准备未随仓库分发的本地逐条资料，见 `docs/public-data-evaluation.md`。
 
-浏览器端到端测试使用 Playwright + 本机 Edge。`npm install` 后启动一套独立测试服务（`QCT_RUNTIME` 指向临时目录，例如端口 8879），设置 `QCT_TEST_URL` 并运行 `node tests/browser.cjs`；安装可选 OCR 后再运行 `node tests/browser_ocr.cjs`。不要让补证测试改变正式案例。
+浏览器端到端测试使用 Playwright + 本机 Edge。`npm install` 后启动独立测试服务（`QCT_RUNTIME` 指向临时目录，例如端口 8879），设置 `QCT_TEST_URL` 并运行 `node tests/browser.cjs`；安装可选 OCR 后再运行 `node tests/browser_ocr.cjs`。独立运行目录将测试数据与日常案例分开。
 
-- `docs/architecture.md`：架构、数据流、算法边界。
+- `docs/architecture.md`：架构、数据流和业务覆盖。
 - `docs/nexent-integration.md`：Nexent 接入说明和联调验收。
-- `docs/evaluation.md`：困难案例、单模型消融方法、结果与适用边界。
-- `docs/policy-change-preview.md`：上传政策的待核验规则候选、企业影响预览与安全边界。
-- `docs/manufacturing-transfer.md`：第二行业模拟模板的复用测试及边界。
-- `docs/release-audit.md`：待公开文件扫描结果、上游许可与仍需人工确认的发布事项。
+- `docs/evaluation.md`：困难案例、单模型消融方法和结果。
+- `docs/policy-change-preview.md`：规则候选提取与企业影响预览。
+- `docs/manufacturing-transfer.md`：制造业模拟模板及复用测试。
+- `docs/release-audit.md`：发布扫描与源码包验证记录。
 - `docs/data-publication.md`：公开源码、合成数据、历史汇总和本地材料的范围。
 - `docs/github-release.md`：源码打包与 GitHub 发布步骤。
-- `artifacts/nexent-agent/qicetong-beijing-agent.zip`：从当前 Nexent 实例真实导出的 Agent 与 Skills 包。
+- `artifacts/nexent-agent/qicetong-beijing-agent.zip`：从 Nexent 实例导出的 Agent 与 Skills 包。
 - `data/sources.json`：政策来源清单。
 - `data/sources/manifest.json`：本机生成的抓取状态、时间和文件哈希，不随公开包分发；新环境获取来源后再生成。
 - `nexent/agent-instructions.md`：智能体系统指令。
 - `artifacts/nexent-skills/`：可上传技能包。
-- `docs/public-data-evaluation.md` 与 `artifacts/public-notice-summary.json`：历史 50 条公示记录的汇总及可验证任务，不计入已授权企业案例。逐条名册与带名结果仅保留在本机；公开版评测中心显示历史汇总。
-- `data/authorized_case_schema.json` 与 `scripts/validate_authorized_case.py`：脱敏结构化案例格式与机器校验；签署真实性仍须人工核验。
+- `docs/public-data-evaluation.md` 与 `artifacts/public-notice-summary.json`：50 条公示记录的历史汇总、来源与评测任务。
+- `data/authorized_case_schema.json` 与 `scripts/validate_authorized_case.py`：脱敏案例格式与机器校验，配合人工授权核验使用。
 
-本地原型默认仅监听回环地址，无多用户身份认证。部署为团队服务时需要先补充访问控制。公开源码与公开企业原始材料是两件事，真实数据须按授权范围处理。
+本地部署默认监听回环地址；团队服务需增加多用户身份认证和访问控制。
 
 ## 许可证与公开范围
 
 企策通自研代码、原创文档、合成示例与原创 Skill 使用 [MIT](LICENSE)。许可证使用 `Qicetong contributors` 作为贡献者集合署名。`package.json` 的 `private: true` 仅防止误发布到 npm，不妨碍 GitHub 源码公开。
 
-`nexent/runtime-overlay/agents/` 基于 Nexent v2.6.0 作兼容适配，保留上游 MIT 许可和 NOTICE；第三方依赖、模型权重、政府原文、企业资料与商标不自动适用本项目 MIT。详情见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。首版公开包排除了企业逐条名单、采集台账、Office 文件、网页全文缓存、密钥、运行原件与模型权重；本机原件没有删除。
+`nexent/runtime-overlay/agents/` 基于 Nexent v2.6.0 作兼容适配，保留上游 MIT 许可和 NOTICE。第三方组件的许可与归属见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，源码和数据的分发范围见 [数据范围](docs/data-publication.md)。
 
-运行 `python scripts/build_public_release.py` 可生成通过扫描的个人开源源码 ZIP 与哈希清单。它只打包本地文件，不自动提交或推送。参赛评分、答辩、招募材料和 Office 制作脚本不进入此仓库；本机原文件仍保留。
+运行 `python scripts/build_public_release.py` 生成经过扫描的源码 ZIP 与文件清单。上传步骤见 [GitHub 发布说明](docs/github-release.md)。

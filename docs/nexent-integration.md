@@ -1,6 +1,6 @@
 # Nexent 接入与验收
 
-本机已完成 Nexent v2.6.0、企策通 MCP、本地 Qwen3 8B 和 Agent 的端到端联调。可执行配置与测试证据位于 `runtime/nexent/`。
+已完成 Nexent v2.6.0、企策通 MCP、本地 Qwen3 8B 和 Agent 的端到端联调。本机配置与调用记录位于 `runtime/nexent/`。
 
 ## 来源
 
@@ -18,13 +18,13 @@
 5. 运行 `.venv\Scripts\python.exe scripts\package_skills.py` 和 `.venv\Scripts\python.exe nexent\connect_qicetong.py`，幂等注册九个工具、五个 Skills 和 Agent。
 6. 运行 `.venv\Scripts\python.exe nexent\configure_local_model.py`，注册本地模型、绑定 Agent 并发布可用版本。
 7. 当前 Agent 同时绑定九个 MCP 工具和五个 Skills。核心预审由 `review_enterprise` 完成；检索后预审可在一次代码动作内顺序调用 `search_policy_evidence` 与 `review_enterprise`。Skill 保留分层流程、输入输出约束和跨模型迁移能力。
-8. 运行 `.venv\Scripts\python.exe nexent\smoke_agent.py`，检查真实预审轨迹。
-9. 分别运行 `smoke_agent.py --mode evaluation`、`--mode search_review` 和 `--mode policy_change`，验证评测、检索后预审和上传政策变化预览的实际工具调用。变化预览所用“职工总数不超过50人”是演示假设，不是现实政策。
+8. 运行 `.venv\Scripts\python.exe nexent\smoke_agent.py`，检查预审工具轨迹。
+9. 分别运行 `smoke_agent.py --mode evaluation`、`--mode search_review` 和 `--mode policy_change`，验证评测、检索后预审和上传政策变化预览的工具调用。变化预览使用演示假设“职工总数不超过50人”。
 10. 运行 `.venv\Scripts\python.exe nexent\export_agent.py`，从当前平台导出 Agent 与 Skills 包。
 
 浏览器验收路径为：使用 `runtime/nexent/demo-access.txt` 登录 `http://localhost:3000`，点击左侧 `开始问答`，选择 `企策通·北京企业政策预审`。页面应显示欢迎语、`规划/执行` 模式、`Qwen3 8B 本地` 和消息输入框。
 
-`nexent/connection.example.json` 仅是人工配置参考，刻意标记为非平台导出格式。不同 Nexent 版本的导入结构可能不同，不提交伪造的“已导出 Agent”。
+`nexent/connection.example.json` 用于人工配置参考；平台导入使用 `export_agent.py` 生成的 Agent ZIP，并核对 Nexent 版本兼容性。
 
 ## 验收请求
 
@@ -36,4 +36,4 @@
 
 ## 联调记录
 
-排查问题时可保存 Nexent 版本、模型名称、Agent 配置、MCP 工具清单与轨迹、技能包和政策来源清单。本机自动记录包括 `integration-results.json`、`model-results.json`、四组 `smoke-agent` 结果及事件轨迹、`artifacts/evaluation-results.json` 和真实 Agent 导出包；`runtime/` 下的记录不随仓库分发。
+排查问题时可保存 Nexent 版本、模型名称、Agent 配置、MCP 工具清单与轨迹、技能包和政策来源清单。自动记录包括 `integration-results.json`、`model-results.json`、四组 `smoke-agent` 结果及事件轨迹。公开结果包括 `artifacts/evaluation-results.json` 和 Agent 导出包，运行记录保留在本机 `runtime/`。

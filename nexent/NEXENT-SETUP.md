@@ -1,18 +1,18 @@
 # Nexent 本机部署与企策通接入
 
-Nexent 源码版本为 v2.6.0，位置在 `external/nexent-develop`。本项目使用北京公开政策和模拟企业数据进行功能演示；模拟材料不可作为真实企业的申报证明。
+Nexent 源码版本为 v2.6.0，位置在 `external/nexent-develop`。功能演示使用北京公开政策与模拟企业数据。
 
 ## 已完成
 
 - Docker Desktop、WSL2、Nexent 基础服务和网页已启动，Docker 虚拟磁盘位于 `D:\DockerDesktopData`，Nexent 数据位于 `D:\NexentData`。
 - Nexent 网页 `http://localhost:3000` 和配置 API `http://127.0.0.1:5010/health/ready` 已通过本机访问检查。
-- 已通过 Nexent API 注册企策通 MCP，发现并启用 9 个工具；5 个自定义 Skills 已上传并绑定到 Agent `企策通·北京企业政策预审`。为保证 8B 本地模型稳定运行，核心预审动作由确定性 MCP 工具执行，不让模型改写数值规则。接入结果记录在 `runtime/nexent/integration-results.json`。
+- 已通过 Nexent API 注册企策通 MCP，发现并启用 9 个工具；5 个自定义 Skills 已上传并绑定到 Agent `企策通·北京企业政策预审`。8B 本地模型负责工具编排，确定性 MCP 工具执行核心预审和数值规则。接入结果记录在 `runtime/nexent/integration-results.json`。
 - 已建立独立的 `企策通演示租户` 和租户管理员，并将 Agent 发布为可用版本。登录后从左侧 `开始问答` 进入，即可在智能体列表中选择 `企策通·北京企业政策预审`。
 - Windows 版 Ollama 0.34.3 已安装到 D 盘，模型 `qwen3:8b` 已下载并注册为 Nexent Agent 模型；模型连通性和 Agent 可用性检查均通过。
 - 官方 Nexent v2.6.0 后端上叠加了本地兼容镜像 `qicetong/nexent:v2.6.0-local`，启用结构化 CodeAgent 输出并处理小模型漏写最终交付语句的情况。`START-NEXENT.cmd` 会自动重建该镜像。
 - 端到端冒烟测试已通过：预审、系统评测、检索后预审和上传政策变化预览均有 Agent 工具轨迹。检索后预审在一次代码动作内先调用 `search_policy_evidence` 再调用 `review_enterprise`。
 - 本项目测试运行 `python -m pytest -q`，结果以 `docs/validation.md` 的最近一次记录为准。
-- 15 个模拟困难案例评测已完成：确定性引擎状态判断 15/15，本地 Qwen3 8B 单模型 10/15；评测边界见 `docs/evaluation.md`。
+- 15 个模拟困难案例评测已完成：确定性引擎状态判断 15/15，本地 Qwen3 8B 单模型 10/15；方法与结果见 `docs/evaluation.md`。
 
 ## 地址与数据
 
@@ -44,4 +44,4 @@ Nexent 源码版本为 v2.6.0，位置在 `external/nexent-develop`。本项目�
 
 ## 运行范围
 
-当前部署包含 infrastructure、application、supabase。未启用 data-process、terminal、monitoring；Docker sandbox 设置为 lightweight 模式，未预拉取不参与企策通演示的可选镜像。企策通政策审查依赖 MCP 工具返回的规则、证据和报告，模型负责选择工具与组织解释，不能把模拟数据说成实际企业资格认定结果。
+当前部署启用 infrastructure、application、supabase，Docker sandbox 使用 lightweight 模式。data-process、terminal、monitoring 及其他可选镜像按需配置。政策审查由 MCP 工具计算规则、证据和报告，模型选择工具并组织解释。
